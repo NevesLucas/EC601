@@ -5,9 +5,8 @@ class twitterClient:
 
         self.client = tweepy.Client(bearer_token=keys["TOKEN"])
 
-    def getTweetsByHashtag(self, tagList, daterange, numberOfTweets):
-        tweets = tweepy.Cursor(self.client.search_recent_tweets,
-                               tagList, lang="en",
-                               since_id=daterange,
-                               tweet_mode='extended').items(numberOfTweets)
+    def searchRecentTweets(self, query, numberOfTweets, fields):
+        tweets = self.client.search_recent_tweets(query=query,
+                                                  tweet_fields=fields,
+                                                  max_results=numberOfTweets)
         return tweets

@@ -12,7 +12,7 @@ class Botmeter:
         self.botDetector = botometer.Botometer(wait_on_ratelimit=True,
                                                rapidapi_key=keys["RAPIDAPI"],
                                                **twitter_app_auth)
-    def checkAccount(self,account):
+    def checkAccount(self, account):
         return self.botDetector.check_account(account)
-    def checkAccountList(self,accountList):
+    def checkAccountList(self, accountList):
         return self.botDetector.check_accounts_in(accountList)
