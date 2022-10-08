@@ -6,7 +6,7 @@ with open('keys.json', 'r') as f:
     credentials = json.load(f)
 
 twitter = twitterAPI.twitterClient(credentials)
-test = twitter.getTweetsByHashtag('covid', '2022-10--01', 1)
+test = twitter.searchRecentTweets('covid', 10, "text,author_id")
 print(test)
-#botDetect = Botometer.Botmeter(credentials)
+#botDetect = Botometer.Botmeter(credentials) # needs v1 credentials
 
