@@ -28,5 +28,21 @@ a users overall sentiment and topic of interest.
 ### User Stories:
 
 1. As a User I want to give a username to analyze
-2. As a User I want to provide a date range to filter the analysis window
-3. As a user I want to receive a summarized report on a users sentiment over the time window provided
+2. As a User I want to select the number of tweets to analyze
+3. As a user I want to receive aen aggregate sentiment score over the window provided
+
+### Library usage
+
+The main wrapper class for this tool is `userSentiment.py` which combines tweepy and NLP apis to get a user sentiment score for their past N tweets.
+
+A simple test case exercising this is in `tests.py`
+
+Currently no real error checking occurs, though the main failure case would be exceeding API usage limits.
+
+
+
+
+
+
+
+`

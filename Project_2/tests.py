@@ -7,9 +7,13 @@ with open('keys.json', 'r') as f:
 
 sentiment = userSentiment.UserSentiment(credentials)
 
-user, userData = sentiment.recentSentimentOfUser("MarkHamill", 100)
+user, userData, score = sentiment.recentSentimentOfUser("MarkHamill", 100)
 
 print(user)
-print('magnitude: ' + str(userData.magnitude))
 
-print('score: ' + str(userData.score))
+print('score: ' + str(score.score))
+print('magnitude: ' + str(score.magnitude))
+
+userTopics = sentiment.topics(userData)
+
+print(userTopics)

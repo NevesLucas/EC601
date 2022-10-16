@@ -7,7 +7,15 @@ class UserSentiment:
         self.twitter = twitterAPI.TwitterClient(keys)
         self.nlp = NLP.NLPClient()
 
-    def recentSentimentOfUser(self,username,tweetCount):
-
+    def recentSentimentOfUser(self, username, tweetCount):
         user, tweets = self.twitter.getRecentTweetsOfUser(username, tweetCount)
-        return user, self.nlp.submitTweets(tweets)
+        return user, tweets, self.nlp.tweetSentiment(tweets)
+
+    def gatherTweets(self, username,count):
+        return self.twitter.getRecentTweetsOfUser(username, count)
+
+    def sentiment(self,data):
+        return self.nlp.tweetSentiment(data)
+
+    def topics(self, data):
+        return self.nlp.tweetTopics(data)
