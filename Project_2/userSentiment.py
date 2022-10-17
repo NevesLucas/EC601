@@ -14,8 +14,11 @@ class UserSentiment:
     def gatherTweets(self, username,count):
         return self.twitter.getRecentTweetsOfUser(username, count)
 
-    def sentiment(self,data):
+    def sentiment(self, data):
         return self.nlp.tweetSentiment(data)
 
     def topics(self, data):
         return self.nlp.tweetTopics(data)
+
+    def entities(self, data):
+        return self.nlp.tweetEntities(data)

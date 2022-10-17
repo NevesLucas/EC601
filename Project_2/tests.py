@@ -17,3 +17,7 @@ print('magnitude: ' + str(score.magnitude))
 userTopics = sentiment.topics(userData)
 
 print(userTopics)
+
+entities = sentiment.entities(userData)
+
+print(entities)

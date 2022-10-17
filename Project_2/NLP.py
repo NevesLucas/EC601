@@ -37,5 +37,5 @@ class NLPClient:
         document = language_v1.Document(
             content=agreggateTweets, type_=language_v1.Document.Type.PLAIN_TEXT
         )
-        entitySentiment = self.client.analyze_entity_sentiment(request={"document": document}).categories
+        entitySentiment = self.client.analyze_entity_sentiment(request={"document": document}).entities
         return entitySentiment
